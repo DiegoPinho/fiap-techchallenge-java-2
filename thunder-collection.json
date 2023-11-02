@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "fiap | tech-challenge 2",
-    "dateExported": "2023-11-02T17:57:10.780Z",
+    "dateExported": "2023-11-02T18:23:41.502Z",
     "version": "1.1",
     "folders": [
         {
@@ -10,6 +10,13 @@
             "containerId": "",
             "created": "2023-11-02T17:52:50.004Z",
             "sortNum": 30000
+        },
+        {
+            "_id": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "addresses",
+            "containerId": "",
+            "created": "2023-11-02T18:19:03.497Z",
+            "sortNum": 40000
         }
     ],
     "requests": [
@@ -28,6 +35,20 @@
             "tests": []
         },
         {
+            "_id": "da257ca5-798c-41f7-b73f-8561770b11c0",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "GET /addresses",
+            "url": "http://localhost:8081/addresses",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-02T18:19:03.497Z",
+            "modified": "2023-11-02T18:20:55.321Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "f56dd077-d169-4f17-b9b0-0d4d833bc0df",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
@@ -37,6 +58,20 @@
             "sortNum": 30000,
             "created": "2023-11-02T17:52:50.007Z",
             "modified": "2023-11-02T17:53:32.665Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "13510573-7d46-495c-99c3-f202f52d7a53",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "GET /addresses/:id",
+            "url": "http://localhost:8081/addresses/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-02T18:19:03.498Z",
+            "modified": "2023-11-02T18:21:01.659Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -61,6 +96,25 @@
             "tests": []
         },
         {
+            "_id": "40159c8e-78bf-4ed5-83c6-8e17e1f573c8",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "POST /addresses",
+            "url": "http://localhost:8081/addresses",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-02T18:19:03.499Z",
+            "modified": "2023-11-02T18:22:14.290Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"street\": \"Street 1\",\n  \"district\": \"District 1\",\n  \"city\": \"City 1\",\n  \"state\": \"State 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "28931f3e-5720-4d58-95af-dd7b843502c6",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
@@ -80,15 +134,48 @@
             "tests": []
         },
         {
+            "_id": "f5258448-9410-4ff7-bf63-38cf1a508f23",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "PUT /addresses",
+            "url": "http://localhost:8081/addresses/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-02T18:19:03.500Z",
+            "modified": "2023-11-02T18:22:51.204Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"street\": \"Street 2\",\n  \"district\": \"District 2\",\n  \"city\": \"City 2\",\n  \"state\": \"State 2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "88c24526-87cf-4cb5-b283-550c186e9b72",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
-            "name": "DELETE /people/:id",
+            "name": "DELETE /vehicles/:id",
             "url": "http://localhost:8081/vehicles/1",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2023-11-02T17:52:50.016Z",
             "modified": "2023-11-02T17:55:48.332Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e4b81307-c12f-4f14-a70d-cfbf19207788",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "b46a59eb-2336-4c63-b734-04dc35429999",
+            "name": "DELETE /addresses/:id",
+            "url": "http://localhost:8081/addresses/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-11-02T18:19:03.501Z",
+            "modified": "2023-11-02T18:23:09.996Z",
             "headers": [],
             "params": [],
             "tests": []
