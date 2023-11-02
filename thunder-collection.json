@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "fiap | tech-challenge 2",
-    "dateExported": "2023-11-02T18:23:41.502Z",
+    "dateExported": "2023-11-02T19:51:42.696Z",
     "version": "1.1",
     "folders": [
         {
@@ -17,6 +17,13 @@
             "containerId": "",
             "created": "2023-11-02T18:19:03.497Z",
             "sortNum": 40000
+        },
+        {
+            "_id": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "parking meters",
+            "containerId": "",
+            "created": "2023-11-02T19:49:23.544Z",
+            "sortNum": 50000
         }
     ],
     "requests": [
@@ -49,6 +56,20 @@
             "tests": []
         },
         {
+            "_id": "8efe52dd-9847-4665-be6d-730404b88a55",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "GET /parkingmeters",
+            "url": "http://localhost:8081/parkingmeters",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-02T19:49:23.544Z",
+            "modified": "2023-11-02T19:49:36.784Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "f56dd077-d169-4f17-b9b0-0d4d833bc0df",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
@@ -72,6 +93,20 @@
             "sortNum": 30000,
             "created": "2023-11-02T18:19:03.498Z",
             "modified": "2023-11-02T18:21:01.659Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0c64b278-8c15-4162-ba2d-7a30c1a91b01",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "GET /parkingmeters/:id",
+            "url": "http://localhost:8081/parkingmeters/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-02T19:49:23.545Z",
+            "modified": "2023-11-02T19:49:55.531Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -115,6 +150,25 @@
             "tests": []
         },
         {
+            "_id": "0e587a23-8442-463b-a4a4-d6c53dfe4527",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "POST /parkingmeters",
+            "url": "http://localhost:8081/parkingmeters",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-02T19:49:23.546Z",
+            "modified": "2023-11-02T19:51:03.393Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"serial\": \"ABCD-2023\",\n  \"Integer\": 1000,\n  \"addressId\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "28931f3e-5720-4d58-95af-dd7b843502c6",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
@@ -153,6 +207,25 @@
             "tests": []
         },
         {
+            "_id": "0a61a26e-d5f3-4eb1-9bc0-c42d43be45bf",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "PUT /parkingmeters",
+            "url": "http://localhost:8081/parkingmeters/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-02T19:49:23.547Z",
+            "modified": "2023-11-02T19:51:18.579Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"serial\": \"ABCD-2023\",\n  \"Integer\": 2000,\n  \"addressId\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "88c24526-87cf-4cb5-b283-550c186e9b72",
             "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
             "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
@@ -176,6 +249,20 @@
             "sortNum": 60000,
             "created": "2023-11-02T18:19:03.501Z",
             "modified": "2023-11-02T18:23:09.996Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d7b2b3f7-4561-4bf1-ae26-33d8f1535190",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "3bdae353-009b-4d86-b7f8-204339add010",
+            "name": "DELETE /parkingmeters/:id",
+            "url": "http://localhost:8081/parkingmeters/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-11-02T19:49:23.548Z",
+            "modified": "2023-11-02T19:51:26.385Z",
             "headers": [],
             "params": [],
             "tests": []

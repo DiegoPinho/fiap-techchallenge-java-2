@@ -11,9 +11,17 @@ CREATE TABLE vehicles (
 
 CREATE TABLE addresses (
   id SERIAL PRIMARY KEY,
-  street VARCHAR(255),
-  district VARCHAR(255),
-  city VARCHAR(255),
-  state VARCHAR(255)
+  street VARCHAR(255) NOT NULL,
+  district VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  state VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE parking_meters {
+  id SERIAL PRIMARY KEY,
+  serial VARCHAR(255) NOT NULL,
+  price INTEGER,
+  address_id INTEGER,
+
+  FOREIGN_KEY(address_id) REFERENCES addresses(id)
+}

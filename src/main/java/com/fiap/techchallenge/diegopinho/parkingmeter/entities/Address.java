@@ -1,9 +1,12 @@
 package com.fiap.techchallenge.diegopinho.parkingmeter.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -22,6 +25,9 @@ public class Address {
   private String district;
   private String city;
   private String state;
+
+  @OneToMany(mappedBy = "address")
+  private List<ParkingMeter> parkingMeters;
 
   public Address() {
   }
