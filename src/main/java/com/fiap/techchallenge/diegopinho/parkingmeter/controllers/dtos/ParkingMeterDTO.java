@@ -1,5 +1,7 @@
 package com.fiap.techchallenge.diegopinho.parkingmeter.controllers.dtos;
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.ParkingMeter;
 
@@ -14,7 +16,7 @@ public class ParkingMeterDTO {
   @JsonProperty
   @NotNull(message = "Price is required and cannot be blank")
   @NotBlank(message = "Price is required and cannot be blank")
-  private Integer price;
+  private BigDecimal price;
 
   @JsonProperty
   @NotBlank(message = "AddressId is required and cannot be blank")

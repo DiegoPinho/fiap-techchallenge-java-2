@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "fiap | tech-challenge 2",
-    "dateExported": "2023-11-02T19:51:42.696Z",
+    "dateExported": "2023-11-02T23:29:20.248Z",
     "version": "1.1",
     "folders": [
         {
@@ -24,6 +24,13 @@
             "containerId": "",
             "created": "2023-11-02T19:49:23.544Z",
             "sortNum": 50000
+        },
+        {
+            "_id": "7eab9979-0438-4114-a96b-3aacde73f1ed",
+            "name": "parks",
+            "containerId": "",
+            "created": "2023-11-02T23:27:04.247Z",
+            "sortNum": 60000
         }
     ],
     "requests": [
@@ -67,6 +74,25 @@
             "modified": "2023-11-02T19:49:36.784Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e28b2708-6abb-4322-8fcf-803936560f4c",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "7eab9979-0438-4114-a96b-3aacde73f1ed",
+            "name": "POST /parks",
+            "url": "http://localhost:8081/parks",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-02T23:27:04.247Z",
+            "modified": "2023-11-02T23:29:13.810Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"vehicle_id\": 1,\n  \"parking_meter_id\": 1\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -223,6 +249,20 @@
                 "raw": "{\n  \"serial\": \"ABCD-2023\",\n  \"Integer\": 2000,\n  \"addressId\": 1\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "06d6ca36-9c25-4b91-8bbf-666fb52444fb",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "7eab9979-0438-4114-a96b-3aacde73f1ed",
+            "name": "PUT /parks",
+            "url": "http://localhost:8081/parks/1/finish",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-02T23:27:04.250Z",
+            "modified": "2023-11-02T23:28:43.296Z",
+            "headers": [],
+            "params": [],
             "tests": []
         },
         {

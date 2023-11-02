@@ -20,8 +20,20 @@ CREATE TABLE addresses (
 CREATE TABLE parking_meters {
   id SERIAL PRIMARY KEY,
   serial VARCHAR(255) NOT NULL,
-  price INTEGER,
+  price NUMERIC(10,2),
   address_id INTEGER,
 
   FOREIGN_KEY(address_id) REFERENCES addresses(id)
+}
+
+CREATE TABLE parks {
+  id SERIAL PRIMARY KEY,
+  vehicle_id INTEGER NOT NULL,
+  parking_meter_id INTEGER NOT NULL,
+  start DATE DEFAULT current_date,
+  end DATE,
+  total NUMERIC(10,2)
+
+  FOREIGN_KEY(vehicle_id) REFERENCES vehicles(id),
+  FOREIGN_KEY(parking_meter_id) REFERENCES parking_meters(id)
 }

@@ -1,5 +1,7 @@
 package com.fiap.techchallenge.diegopinho.parkingmeter.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -7,8 +9,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
@@ -33,6 +36,9 @@ public class Vehicle {
 
   private String model;
   private String manufacturer;
+
+  @OneToMany(mappedBy = "vehicle")
+  private List<Park> parks;
 
   public Vehicle() {
 

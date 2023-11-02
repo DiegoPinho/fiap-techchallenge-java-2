@@ -1,5 +1,7 @@
 package com.fiap.techchallenge.diegopinho.parkingmeter.entities;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +23,7 @@ public class ParkingMeter {
   private Long id;
 
   private String serial;
-  private Integer price;
+  private BigDecimal price;
 
   @ManyToOne
   @JoinColumn(name = "address_id")
@@ -31,7 +33,7 @@ public class ParkingMeter {
 
   }
 
-  public ParkingMeter(String serial, Integer price) {
+  public ParkingMeter(String serial, BigDecimal price) {
     this.serial = serial;
     this.price = price;
   }
@@ -52,11 +54,11 @@ public class ParkingMeter {
     this.serial = serial;
   }
 
-  public Integer getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(Integer price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
   }
 
