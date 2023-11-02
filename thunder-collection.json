@@ -1,0 +1,97 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "fiap | tech-challenge 2",
+    "dateExported": "2023-11-02T17:57:10.780Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "vehicles",
+            "containerId": "",
+            "created": "2023-11-02T17:52:50.004Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "498f0be1-aeea-431a-b434-639a825d50b7",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "GET /vehicles",
+            "url": "http://localhost:8081/vehicles",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-02T17:52:50.004Z",
+            "modified": "2023-11-02T17:53:22.546Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f56dd077-d169-4f17-b9b0-0d4d833bc0df",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "GET /vehicles/:id",
+            "url": "http://localhost:8081/vehicles/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-02T17:52:50.007Z",
+            "modified": "2023-11-02T17:53:32.665Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3f4c2aae-3b82-41a4-a276-0d8fbe15b7a3",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "POST /vehicles",
+            "url": "http://localhost:8081/vehicles",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-02T17:52:50.010Z",
+            "modified": "2023-11-02T17:55:11.547Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"label\": \"BMW\",\n  \"vehicleType\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"320i\",\n  \"manufacturer\": \"BMW\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "28931f3e-5720-4d58-95af-dd7b843502c6",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "PUT /vehicles",
+            "url": "http://localhost:8081/vehicles/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-02T17:52:50.013Z",
+            "modified": "2023-11-02T17:55:40.701Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"label\": \"BMW\",\n  \"vehicleType\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"X1\",\n  \"manufacturer\": \"BMW\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "88c24526-87cf-4cb5-b283-550c186e9b72",
+            "colId": "b75e0d08-d947-41d5-ab95-a17ec68fd445",
+            "containerId": "11e62c1e-d3ed-49fa-921b-8263a2843edf",
+            "name": "DELETE /people/:id",
+            "url": "http://localhost:8081/vehicles/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-11-02T17:52:50.016Z",
+            "modified": "2023-11-02T17:55:48.332Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
