@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "fiap | tech-challenge 2",
-    "dateExported": "2023-11-02T23:29:20.248Z",
+    "dateExported": "2023-11-03T00:10:04.450Z",
     "version": "1.1",
     "folders": [
         {
@@ -104,7 +104,7 @@
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-11-02T17:52:50.007Z",
-            "modified": "2023-11-02T17:53:32.665Z",
+            "modified": "2023-11-03T00:09:38.963Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -146,12 +146,12 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-11-02T17:52:50.010Z",
-            "modified": "2023-11-02T17:55:11.547Z",
+            "modified": "2023-11-03T00:09:05.349Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"label\": \"BMW\",\n  \"vehicleType\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"320i\",\n  \"manufacturer\": \"BMW\"\n}",
+                "raw": "{\n  \"label\": \"BMW\",\n  \"type\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"320i\",\n  \"manufacturer\": \"BMW\"\n}",
                 "form": []
             },
             "tests": []
@@ -203,12 +203,12 @@
             "method": "PUT",
             "sortNum": 50000,
             "created": "2023-11-02T17:52:50.013Z",
-            "modified": "2023-11-02T17:55:40.701Z",
+            "modified": "2023-11-03T00:09:16.365Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"label\": \"BMW\",\n  \"vehicleType\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"X1\",\n  \"manufacturer\": \"BMW\"\n}",
+                "raw": "{\n  \"label\": \"BMW\",\n  \"type\": \"CAR\",\n  \"licensePlate\": \"BMW7H99\",\n  \"model\": \"X1\",\n  \"manufacturer\": \"BMW\"\n}",
                 "form": []
             },
             "tests": []

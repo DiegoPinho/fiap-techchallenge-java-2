@@ -5,6 +5,7 @@ import com.fiap.techchallenge.diegopinho.parkingmeter.entities.Vehicle;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.VehicleType;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class VehicleDTO {
   @JsonProperty
@@ -12,7 +13,7 @@ public class VehicleDTO {
   private String label;
 
   @JsonProperty
-  @NotBlank(message = "Vehicle Type is required and cannot be blank")
+  @NotNull(message = "Vehicle Type is required and cannot be blank")
   private VehicleType type;
 
   @JsonProperty
