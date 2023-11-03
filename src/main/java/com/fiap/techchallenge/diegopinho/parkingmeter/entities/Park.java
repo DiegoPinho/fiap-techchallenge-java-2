@@ -3,6 +3,7 @@ package com.fiap.techchallenge.diegopinho.parkingmeter.entities;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +32,10 @@ public class Park {
   @JoinColumn(name = "parking_meter_id")
   private ParkingMeter parkingMeter;
 
+  @Column(name = "start_date")
   private LocalDateTime start;
+
+  @Column(name = "end_date")
   private LocalDateTime end;
 
   private BigDecimal total;
