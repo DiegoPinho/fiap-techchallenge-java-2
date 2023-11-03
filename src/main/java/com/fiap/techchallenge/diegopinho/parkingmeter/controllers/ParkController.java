@@ -15,7 +15,7 @@ import com.fiap.techchallenge.diegopinho.parkingmeter.entities.Park;
 import com.fiap.techchallenge.diegopinho.parkingmeter.services.ParkService;
 
 @RestController
-@RequestMapping("/park")
+@RequestMapping("/parks")
 public class ParkController {
 
   @Autowired

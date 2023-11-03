@@ -63,11 +63,9 @@ public class ParkService {
     BigDecimal parkingMeterPrice = parkingMeter.getPrice();
 
     Duration duration = Duration.between(park.getStart(), park.getEnd());
-    long minutes = duration.toMinutes();
+    BigDecimal minutes = BigDecimal.valueOf(duration.toMinutes());
 
-    BigDecimal minutesBigDecimal = BigDecimal.valueOf(minutes);
-
-    return minutesBigDecimal.multiply(BigDecimal.valueOf(60)).divide(parkingMeterPrice, 2, RoundingMode.HALF_UP);
+    return minutes.multiply(parkingMeterPrice).divide(BigDecimal.valueOf(60), RoundingMode.HALF_UP);
   }
 
 }

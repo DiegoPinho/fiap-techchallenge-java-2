@@ -14,12 +14,11 @@ public class ParkingMeterDTO {
   private String serial;
 
   @JsonProperty
-  @NotNull(message = "Price is required and cannot be blank")
-  @NotBlank(message = "Price is required and cannot be blank")
+  @NotNull(message = "Price is required and cannot be null")
   private BigDecimal price;
 
   @JsonProperty
-  @NotBlank(message = "AddressId is required and cannot be blank")
+  @NotNull(message = "AddressId is required and cannot be null")
   private Long addressId;
 
   public ParkingMeter toParkingMeter() {
