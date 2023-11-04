@@ -61,3 +61,91 @@ body (JSON):
 
 `DELETE /vehicles/:id`
 Deletes a vehicle based on the id. You can't delete a vehicle in use.
+
+## Addresses
+`GET /addresses`
+Return all addressess. You can use filters by query params.
+
+`GET /addresses/:id`
+Return an address based on the id.
+
+`POST /addresses`
+Creates a new address.
+
+body (JSON):
+```
+{
+  "street": String
+  "number": Integer
+  "string": String
+  "city": String
+  "state": String
+}
+```
+
+`PUT /addresses/:id`
+Updates a address based on the id.
+
+body (JSON):
+```
+{
+  "street": String
+  "number": Integer
+  "string": String
+  "city": String
+  "state": String
+}
+```
+
+`DELETE /addresses/:id`
+Deletes a address based on the id. You can't delete an address in use.
+
+
+## Parking Meters
+`GET /parkingmeter`
+Return all parking meters. You can use filters by query params.
+
+`GET /parkingmeter/:id`
+Return a parking meter based on the id.
+
+`POST /parkingmeter`
+Creates a new parking meter.
+
+body (JSON):
+```
+{
+  "serial": String,
+  "price": Decimal,
+  "addressId": Integer
+}
+```
+
+`PUT /parkingmeter/:id`
+Updates a parking meter based on the id.
+
+body (JSON):
+```
+{
+  "serial": String,
+  "price": Decimal,
+  "addressId": Integer
+}
+```
+
+`DELETE /parkingmeter/:id`
+Deletes a parking meter based on the id. You can't delete an parking meter in use.
+
+## Parks
+`POST /parks`
+Allocates a parking spot with a vehicle using a parking meter.
+
+body (JSON):
+```
+{
+  "vehicleId": Integer,
+  "parkingMeterId": Integer
+}
+```
+
+`PUT /parks/:id/finish`
+Finish a parking.
