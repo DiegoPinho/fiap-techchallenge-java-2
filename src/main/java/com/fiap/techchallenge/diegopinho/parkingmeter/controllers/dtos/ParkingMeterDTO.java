@@ -25,6 +25,10 @@ public class ParkingMeterDTO {
     return new ParkingMeter(serial, price);
   }
 
+  public String getSerial() {
+    return serial;
+  }
+
   public Long getAddressId() {
     return addressId;
   }

@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fiap.techchallenge.diegopinho.parkingmeter.controllers.dtos.ParkingMeterDTO;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.ParkingMeter;
+import com.fiap.techchallenge.diegopinho.parkingmeter.exceptions.ConflictException;
+import com.fiap.techchallenge.diegopinho.parkingmeter.exceptions.NotFoundException;
 import com.fiap.techchallenge.diegopinho.parkingmeter.services.ParkingMeterService;
 import com.fiap.techchallenge.diegopinho.parkingmeter.utils.DTOValidator;
 
@@ -41,8 +43,10 @@ public class ParkingMeterController {
     try {
       ParkingMeter parkingMeter = this.parkingMeterService.getById(id);
       return ResponseEntity.ok().body(parkingMeter);
-    } catch (Exception e) {
+    } catch (NotFoundException e) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
   }
 
@@ -53,17 +57,35 @@ public class ParkingMeterController {
       return ResponseEntity.badRequest().body(violations);
     }
 
-    ParkingMeter parkingMeter = this.parkingMeterService.create(parkingMeterDTO);
-    return ResponseEntity.status(HttpStatus.CREATED).body(parkingMeter);
+    try {
+      ParkingMeter parkingMeter = this.parkingMeterService.create(parkingMeterDTO);
+      return ResponseEntity.status(HttpStatus.CREATED).body(parkingMeter);
+    } catch (NotFoundException e) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    } catch (ConflictException e) {
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    }
+
   }
 
   @PutMapping("/{id}")
   public ResponseEntity<?> update(@RequestBody ParkingMeterDTO parkingMeterDTO, @PathVariable("id") Long id) {
+    Map<Object, Object> violations = validator.check(parkingMeterDTO);
+    if (!violations.isEmpty()) {
+      return ResponseEntity.badRequest().body(violations);
+    }
+
     try {
       this.parkingMeterService.update(id, parkingMeterDTO);
       return ResponseEntity.ok().build();
-    } catch (Exception e) {
+    } catch (NotFoundException e) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    } catch (ConflictException e) {
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
   }
 
@@ -72,8 +94,10 @@ public class ParkingMeterController {
     try {
       this.parkingMeterService.delete(id);
       return ResponseEntity.ok().build();
+    } catch (NotFoundException e) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Parking Meter not found or in use.");
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cannot remove resource in use.");
     }
   }
 

@@ -13,6 +13,7 @@ import com.fiap.techchallenge.diegopinho.parkingmeter.controllers.dtos.ParkDTO;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.Park;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.ParkingMeter;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.Vehicle;
+import com.fiap.techchallenge.diegopinho.parkingmeter.exceptions.NotFoundException;
 import com.fiap.techchallenge.diegopinho.parkingmeter.repositories.ParkRepository;
 
 @Service
@@ -34,7 +35,7 @@ public class ParkService {
   public Park getById(Long id) {
     return this.parkRepository
         .findById(id)
-        .orElseThrow(() -> new IllegalArgumentException("Park Not Found!"));
+        .orElseThrow(() -> new NotFoundException("Park Not Found!"));
   }
 
   public Park park(ParkDTO parkDTO) {
@@ -49,12 +50,15 @@ public class ParkService {
   }
 
   public Park finish(Long id) {
-    Park park = this.parkRepository
-        .findById(id)
-        .orElseThrow(() -> new IllegalArgumentException("Park Not Found!"));
+    Park park = this.getById(id);
+
+    if (!(park.getEnd() == null)) {
+      throw new RuntimeException("Parking already closed!");
+    }
 
     park.setEnd(LocalDateTime.now());
     park.setTotal(this.calculatePrice(park));
+
     return this.parkRepository.save(park);
   }
 

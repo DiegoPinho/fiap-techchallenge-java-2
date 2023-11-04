@@ -31,4 +31,8 @@ public class VehicleDTO {
   public Vehicle toVehicle() {
     return new Vehicle(this.label, this.type, this.licensePlate, this.model, this.manufacturer);
   }
+
+  public String getLicensePlate() {
+    return licensePlate;
+  }
 }

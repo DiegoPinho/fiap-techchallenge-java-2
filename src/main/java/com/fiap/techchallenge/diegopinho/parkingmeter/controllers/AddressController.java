@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fiap.techchallenge.diegopinho.parkingmeter.controllers.criterias.AddressCriteria;
 import com.fiap.techchallenge.diegopinho.parkingmeter.controllers.dtos.AddressDTO;
 import com.fiap.techchallenge.diegopinho.parkingmeter.entities.Address;
+import com.fiap.techchallenge.diegopinho.parkingmeter.exceptions.NotFoundException;
 import com.fiap.techchallenge.diegopinho.parkingmeter.services.AddressService;
 import com.fiap.techchallenge.diegopinho.parkingmeter.utils.DTOValidator;
 
@@ -42,8 +43,10 @@ public class AddressController {
     try {
       Address address = this.addressService.getById(id);
       return ResponseEntity.ok().body(address);
-    } catch (Exception e) {
+    } catch (NotFoundException e) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
   }
 
@@ -63,8 +66,10 @@ public class AddressController {
     try {
       this.addressService.update(id, addressDTO);
       return ResponseEntity.ok().build();
-    } catch (Exception e) {
+    } catch (NotFoundException e) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
   }
 
@@ -73,8 +78,10 @@ public class AddressController {
     try {
       this.addressService.delete(id);
       return ResponseEntity.ok().build();
+    } catch (NotFoundException e) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Address not found or in use.");
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cannot remove resource in use.");
     }
   }
 
